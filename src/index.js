@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Card from './Card';
+import CardList from './CardList';
+import {cats} from './cats';
 
 // MDB
 import 'mdbreact';
@@ -13,8 +14,8 @@ import "mdbreact/dist/css/mdb.css";
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-        < Card />
-            
+    <CardList cats={cats} />
+
     , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
