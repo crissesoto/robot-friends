@@ -1,29 +1,26 @@
-import React, {Fragment} from 'react';
-import { MDBContainer, MDBRow} from 'mdbreact';
+
+import React from 'react';
 import Card from './Card';
+import { MDBContainer } from 'mdbreact';
 
-
-const CardList = ({cats}) =>{
-    const CardArray = cats.map((user, i) =>{
-        return (
-            < Card 
-            key={cats[i].id} 
-            id= {cats[i].id} 
-            name={cats[i].name} 
-            username={cats[i].username} 
-            email={cats[0].email} 
-            />
-        );
-    })
-    return(
-        <Fragment>
-            <MDBContainer>
-                <MDBRow>
-                    {CardArray}
-                </MDBRow>
-            </MDBContainer>
-        </Fragment>
-    )
+const CardList = ({ cats }) => {
+  return (
+    <MDBContainer fluid className="d-flex row">
+      {
+        cats.map((user, i) => {
+          return (
+            
+            <Card
+              key={i}
+              id={cats[i].id}
+              name={cats[i].name}
+              email={cats[i].email}
+              />
+          );
+        })
+      }
+    </MDBContainer>
+  );
 }
 
 export default CardList;
