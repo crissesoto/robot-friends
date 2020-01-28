@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './container/App';
+
 
 // MDB
 import 'mdbreact';
@@ -10,7 +12,6 @@ import "mdbreact/dist/css/mdb.css";
 
 // ServiceWork (default)
 import * as serviceWorker from './serviceWorker';
-import App from './App';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

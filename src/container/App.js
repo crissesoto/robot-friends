@@ -1,6 +1,7 @@
 import React, {Fragment, Component} from 'react';
-import SearchBox from './components/SearchBox';
-import CardList from './CardList';
+import SearchBox from '../components/SearchBox';
+import CardList from '../components/CardList';
+import ErrorBoundry from '../components/ErrorBoundry';
 import { MDBContainer } from 'mdbreact';
 
 
@@ -38,7 +39,9 @@ class App extends Component{
                 <h1 className="tex-center m-4 green-text display-4"> Robots and Cats Friends</h1>
                 <SearchBox searchChange = {this.onSearchChange} name={this.state.name}/>
             </MDBContainer>
-                    <CardList cats={filteredRobots} />
+            <ErrorBoundry>
+                <CardList cats={filteredRobots} />
+            </ErrorBoundry>
         </Fragment>
     )
 }
